@@ -1,1 +1,10 @@
-
+numpy
+pandas
+matplotlib
+scipy
+soundfile
+librosa
+huggingface_hub
+pyyaml
+tqdm
+PyTorch
