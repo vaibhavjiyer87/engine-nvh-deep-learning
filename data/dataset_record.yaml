@@ -1,0 +1,24 @@
+dataset:
+  name: Procedural Engine Sounds Dataset
+  version: "1.0"
+  author: Robin Doerfler
+  official_repository: rdoerfler/procedural-engine-sounds
+  primary_doi: 10.5281/zenodo.16883336
+  license: CC BY-NC 4.0
+
+project_usage:
+  initial_subset: A_full_set
+  download_date: "2026-08-03"
+  raw_data_modified: false
+  redistribution_in_github: false
+
+storage:
+  platform: Google Drive
+  raw_data_directory: >
+    NVH_DeepLearning/EngineOperatingState/data/raw/
+    procedural_engine_sounds
+
+notes:
+  - Raw files must remain unchanged.
+  - GitHub contains code and metadata only.
+  - Full audio data is not committed to GitHub.
