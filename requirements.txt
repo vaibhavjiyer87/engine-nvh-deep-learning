@@ -7,4 +7,3 @@ librosa
 huggingface_hub
 pyyaml
 tqdm
-PyTorch
