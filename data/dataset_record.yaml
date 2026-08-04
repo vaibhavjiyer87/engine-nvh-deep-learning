@@ -15,7 +15,7 @@ project_usage:
 storage:
   platform: Google Drive
   raw_data_directory: >
-    NVH_DeepLearning/EngineOperatingState/data/raw/
+    NVH_DeepLearning/01_EngineOperatingState/data/raw/
     procedural_engine_sounds
 
 notes:
