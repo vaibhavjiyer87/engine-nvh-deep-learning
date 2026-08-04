@@ -3,7 +3,7 @@ The full dataset is not stored in this GitHub repository.
 After obtaining the dataset from its official source, place the unmodified files under:
 
 Google Drive:
-NVH_DeepLearning/EngineOperatingState/data/raw/
+NVH_DeepLearning/01_EngineOperatingState/data/raw/
 
 The original directory structure should be preserved.
 
