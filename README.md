@@ -22,3 +22,16 @@ torque, and selected engine-order amplitudes from acoustic recordings.
 4. Train a spectrogram-based CNN
 5. Validate on unseen operating conditions
 6. Add order-amplitude prediction
+
+## Current status
+
+- [x] GitHub repository initialized
+- [x] Google Drive storage configured
+- [x] Google Colab environment verified
+- [x] Dataset provenance documented
+- [x] A_full_set acquired
+- [x] Raw WAV structure validated
+- [x] Raw-file manifest generated
+- [ ] Processed sample manifest generated
+- [ ] Train/validation/test split defined
+- [ ] Baseline RPM model trained
