@@ -1,5 +1,1 @@
-experiment_id,date,git_commit,dataset_subset,
-manifest_version,preprocessing_version,split_version,
-feature_type,model_name,targets,random_seed,
-rpm_mae,rpm_rmse,torque_mae,torque_rmse,
-order_mae_db,checkpoint_path,status,notes
+experiment_id,date,git_commit,dataset_subset,manifest_version,preprocessing_version,split_version,feature_type,model_name,targets,random_seed,rpm_mae,rpm_rmse,torque_mae,torque_rmse,order_mae_db,checkpoint_path,status,notes
