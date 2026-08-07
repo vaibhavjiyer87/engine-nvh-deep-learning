@@ -1,8 +1,25 @@
 RPM target:
-    rpm_mean
+   model_target: rpm_mean
+    calculated_statistics:
+      - rpm_mean
+      - rpm_median
+      - rpm_min
+      - rpm_max
+      - rpm_std
+      - rpm_range
 
 Torque target:
-    torque_mean_nm
+   model_target: torque_mean_nm
+    calculated_statistics:
+      - torque_mean_nm
+      - torque_median_nm
+      - torque_min_nm
+      - torque_max_nm
+      - torque_std_nm
+      - torque_range_nm
+
+order_amplitudes:
+   status: deferred
 
 RPM diagnostics retained:
     rpm_median
@@ -24,3 +41,21 @@ First RPM model inclusion:
 Transient windows:
     retained
     not used in first RPM model
+
+operating_state:
+  steady_state_rule:
+    metric: rpm_range
+    maximum_absolute_range_rpm: 100
+    maximum_relative_range_fraction: 0.03
+    combined_rule: >
+      rpm_range <= max(
+      100,
+      0.03 * abs(rpm_mean)
+      )
+
+  first_rpm_model:
+    include_operating_states:
+      - steady
+
+  transient_windows:
+    retain_in_sample_manifest: true
