@@ -1,0 +1,26 @@
+RPM target:
+    rpm_mean
+
+Torque target:
+    torque_mean_nm
+
+RPM diagnostics retained:
+    rpm_median
+    rpm_min
+    rpm_max
+    rpm_std
+    rpm_range
+
+Torque diagnostics retained:
+    torque_median_nm
+    torque_min_nm
+    torque_max_nm
+    torque_std_nm
+    torque_range_nm
+
+First RPM model inclusion:
+    steady_v001 == True
+
+Transient windows:
+    retained
+    not used in first RPM model
