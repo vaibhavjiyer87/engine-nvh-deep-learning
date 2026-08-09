@@ -20,7 +20,7 @@ torque, and selected engine-order amplitudes from acoustic recordings.
 5. Validate on unseen operating conditions
 6. Add order-amplitude prediction
 
-## Current status (06 Aug 2026, 6am PST)
+## Current status (09 Aug 2026, 6am PST)
 - [x] GitHub repository initialized
 - [x] Google Drive storage configured
 - [x] Google Colab environment verified
@@ -28,8 +28,10 @@ torque, and selected engine-order amplitudes from acoustic recordings.
 - [x] A_full_set acquired
 - [x] Raw WAV structure validated
 - [x] Raw-file manifest generated
-- [ ] Processed sample manifest generated
-- [ ] Train/validation/test split defined
+- [x] PREP-001 preprocessing specification frozen
+- [x] SPLIT-001 train/validation/test split frozen
+- [ ] Sample-level manifest generated
+- [ ] Signal/order analysis completed
 - [ ] Baseline RPM model trained
 
 ## Dataset
@@ -100,3 +102,22 @@ The expected local Google Drive location is:
 NVH_DeepLearning/01_EngineOperatingState/data/raw/procedural_engine_sounds/dataset/audio/A_full_set/
 
 The original dataset folder structure and filenames are preserved. Instructions for obtaining and organizing the raw data are provided in data/README.md.
+
+## Dataset splitting
+
+The initial dataset split, `SPLIT-001`, is defined at the original
+WAV-file level before window segmentation.
+
+The split uses approximately:
+
+- 70% training
+- 15% validation
+- 15% test
+
+RPM and torque operating-condition coverage is balanced using joint
+stratification.
+
+All windows from the same source recording remain in the same split
+to prevent data leakage.
+
+See `configs/split_v001.yaml` for the frozen specification.
