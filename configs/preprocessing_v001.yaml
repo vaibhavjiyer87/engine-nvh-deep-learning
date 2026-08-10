@@ -1,61 +1,63 @@
-RPM target:
-   model_target: rpm_mean
+specification:
+  preprocessing_version: PREP-001
+  status: frozen
+  dataset_subset: A_full_set
+source_data:
+  format: wav
+  source_sample_rate_hz: 48000
+  expected_channels: 4
+  audio_channels:
+    left: 1
+    right: 2
+  annotation_channels:
+    rpm: 3
+    torque: 4
+  rpm_scale_factor: 10000
+  torque_scale_factor_nm: 1000
+audio_processing:
+  target_sample_rate_hz: 16000
+  channel_strategy: mono_average
+  mono_formula: (left + right) / 2
+  resampling: anti_aliasing_resample
+  per_window_amplitude_normalization: false
+  preserve_raw_files: true
+windowing:
+  window_duration_s: 1.0
+  overlap_fraction: 0.5
+  hop_duration_s: 0.5
+  incomplete_final_window: discard
+targets:
+  rpm:
+    model_target: rpm_mean
     calculated_statistics:
-      - rpm_mean
-      - rpm_median
-      - rpm_min
-      - rpm_max
-      - rpm_std
-      - rpm_range
-
-Torque target:
-   model_target: torque_mean_nm
+    - rpm_mean
+    - rpm_median
+    - rpm_min
+    - rpm_max
+    - rpm_std
+    - rpm_range
+  torque:
+    model_target: torque_mean_nm
     calculated_statistics:
-      - torque_mean_nm
-      - torque_median_nm
-      - torque_min_nm
-      - torque_max_nm
-      - torque_std_nm
-      - torque_range_nm
-
-order_amplitudes:
-   status: deferred
-
-RPM diagnostics retained:
-    rpm_median
-    rpm_min
-    rpm_max
-    rpm_std
-    rpm_range
-
-Torque diagnostics retained:
-    torque_median_nm
-    torque_min_nm
-    torque_max_nm
-    torque_std_nm
-    torque_range_nm
-
-First RPM model inclusion:
-    steady_v001 == True
-
-Transient windows:
-    retained
-    not used in first RPM model
-
+    - torque_mean_nm
+    - torque_median_nm
+    - torque_min_nm
+    - torque_max_nm
+    - torque_std_nm
+    - torque_range_nm
+  order_amplitudes:
+    status: deferred
 operating_state:
   steady_state_rule:
     metric: rpm_range
     maximum_absolute_range_rpm: 100
     maximum_relative_range_fraction: 0.03
-    combined_rule: >
-      rpm_range <= max(
-      100,
-      0.03 * abs(rpm_mean)
-      )
-
+    combined_rule: rpm_range <= max(100, 0.03 * abs(rpm_mean))
   first_rpm_model:
     include_operating_states:
-      - steady
-
+    - steady
   transient_windows:
     retain_in_sample_manifest: true
+modeling_policy:
+  feature_standardization: fit_on_training_split_only
+  test_set_statistics_must_not_be_used_for_fitting: true
