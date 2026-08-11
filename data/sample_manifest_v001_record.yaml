@@ -1,0 +1,24 @@
+manifest:
+  name: sample_manifest_v001.csv
+  manifest_version: SAMPLE-MANIFEST-001
+  status: frozen
+  created_date: '2026-08-11'
+  storage: Google Drive
+  logical_path: data/manifests/sample_manifest_v001.csv
+  sha256: feca681333583270130e85c202b20304793a96cb43e8f82b962104aa535a09f4
+source:
+  dataset_subset: A_full_set
+  parent_file_count: 767
+  sample_count: 16503
+specifications:
+  preprocessing_version: PREP-001
+  split_version: SPLIT-001
+sample_definition:
+  window_duration_s: 1.0
+  overlap_fraction: 0.5
+  source_sample_rate_hz: 48000
+  target_sample_rate_hz: 16000
+  audio_channel_strategy: mono_average
+model_population:
+  first_rpm_model_filter: model_eligible_rpm_v001 == True
+  transient_windows_retained: true
