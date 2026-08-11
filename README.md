@@ -20,7 +20,7 @@ torque, and selected engine-order amplitudes from acoustic recordings.
 5. Validate on unseen operating conditions
 6. Add order-amplitude prediction
 
-## Current status (09 Aug 2026, 6am PST)
+## Current status (11 Aug 2026, 5am PST)
 - [x] GitHub repository initialized
 - [x] Google Drive storage configured
 - [x] Google Colab environment verified
@@ -30,8 +30,9 @@ torque, and selected engine-order amplitudes from acoustic recordings.
 - [x] Raw-file manifest generated
 - [x] PREP-001 preprocessing specification frozen
 - [x] SPLIT-001 train/validation/test split frozen
-- [ ] Sample-level manifest generated
-- [ ] Signal/order analysis completed
+- [x] Sample-level manifest generated
+- [ ] Signal and order-domain validation completed
+- [ ] Baseline audio features generated
 - [ ] Baseline RPM model trained
 
 ## Dataset
@@ -115,6 +116,29 @@ The split uses approximately:
 - 15% test
 
 RPM and torque operating-condition coverage is balanced using joint
+
+
+## Model-ready sample definition
+
+`SAMPLE-MANIFEST-001` defines the first model-ready sample
+population.
+
+Each sample represents a one-second audio window with 50% overlap.
+Every sample retains window-level RPM and torque statistics and
+inherits the train, validation, or test assignment of its parent
+source WAV file.
+
+Transient windows are retained in the manifest, while the first RPM
+regression model uses windows marked as steady-state.
+
+The manifest is generated under:
+
+- `PREP-001`
+- `SPLIT-001`
+
+The full sample manifest is stored externally in Google Drive.
+Its reproducibility record and SHA-256 checksum are stored in
+`data/sample_manifest_v001_record.yaml`.
 stratification.
 
 All windows from the same source recording remain in the same split
