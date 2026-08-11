@@ -33,6 +33,21 @@ same train, validation, or test assignment. This prevents overlapping
 windows from the same recording from appearing in multiple splits.
 
 The split methodology is defined in: `configs/split_v001.yaml`
+
+
+### Sample manifest
+
+The model-ready sample inventory is stored as:
+`sample_manifest_v001.csv`
+
+in the project's persistent Google Drive manifest directory.
+The file contains one row per model window rather than one row per
+source WAV.
+The GitHub reproducibility record is:
+`data/sample_manifest_v001_record.yaml`
+
+The record identifies the preprocessing and split specifications
+used to create the manifest and stores its SHA-256 checksum.
 Audio file format
 Sampling rates
 Whether RPM is instantaneous or constant
