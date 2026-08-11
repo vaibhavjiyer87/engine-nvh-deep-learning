@@ -1,0 +1,35 @@
+specification:
+  order_analysis_version: ORDER-001
+  status: frozen
+  created_date: '2026-08-11'
+inputs:
+  sample_manifest: SAMPLE-MANIFEST-001
+  preprocessing_version: PREP-001
+  split_version: SPLIT-001
+  design_population: steady training samples only
+audio:
+  sample_rate_hz: 16000
+  channel_strategy: mono_average
+  mean_removal: true
+fft:
+  window: hann
+  window_duration_s: 1.0
+  frequency_resolution_hz: 1.0
+  amplitude_units: dBFS
+candidate_orders:
+- 0.5
+- 1.0
+- 1.5
+- 2.0
+- 3.0
+- 4.0
+order_peak_search:
+  method: local_maximum_around_theoretical_order
+  minimum_halfwidth_fft_bins: 2
+  rpm_variation_component: order * rpm_range / 120
+stft:
+  window: hann
+  nperseg: 1024
+  noverlap: 768
+test_set_policy:
+  used_for_method_design: false
