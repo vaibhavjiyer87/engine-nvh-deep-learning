@@ -1,0 +1,19 @@
+artifact:
+  name: baseline_features_v001.parquet
+  feature_version: FEAT-001
+  status: frozen
+  storage: Google Drive
+  logical_path: data/cached_features/FEAT-001/baseline_features_v001.parquet
+  sha256: 5d098ad00f279a91f92029fbfb57f6e929c1f699cf39ce90eab7ee0f70958620
+population:
+  sample_count: 16503
+  predictor_count: 41
+upstream:
+  preprocessing: PREP-001
+  split: SPLIT-001
+  sample_manifest: SAMPLE-MANIFEST-001
+  order_analysis: ORDER-001
+rpm_baseline_policy:
+  target: rpm_mean
+  eligible_filter: model_eligible_rpm_v001 == True
+  ground_truth_rpm_order_features_used: false

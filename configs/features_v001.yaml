@@ -1,0 +1,47 @@
+specification:
+  feature_version: FEAT-001
+  status: frozen
+  created_date: '2026-08-12'
+upstream_artifacts:
+  preprocessing_version: PREP-001
+  split_version: SPLIT-001
+  sample_manifest_version: SAMPLE-MANIFEST-001
+  order_analysis_version: ORDER-001
+input_audio:
+  sample_rate_hz: 16000
+  channel_strategy: mono_average
+  per_window_normalization: false
+time_domain_features:
+- rms
+- peak_abs
+- crest_factor
+- zero_crossing_rate
+spectral_features:
+- spectral_centroid_hz
+- spectral_bandwidth_hz
+- spectral_rolloff_85_hz
+- spectral_flatness
+- dominant_frequency_hz
+band_energy_hz:
+- - 0
+  - 250
+- - 250
+  - 500
+- - 500
+  - 1000
+- - 1000
+  - 2000
+- - 2000
+  - 4000
+- - 4000
+  - 8000
+mfcc:
+  n_mfcc: 13
+  statistics:
+  - mean
+  - std
+rpm_model_policy:
+  population_filter: model_eligible_rpm_v001 == True
+  target: rpm_mean
+  order_features_using_ground_truth_rpm: excluded_from_predictors
+  feature_scaling: fit_on_training_split_only
