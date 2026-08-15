@@ -9,3 +9,5 @@ pyyaml
 tqdm
 scikit-learn
 pyarrow
+
+h5py

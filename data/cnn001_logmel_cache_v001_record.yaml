@@ -1,0 +1,25 @@
+artifact:
+  name: logmel_v001.h5
+  model_version: CNN-001
+  status: frozen
+  storage: Google Drive
+  logical_path: data/cached_features/CNN-001/logmel_v001.h5
+  sha256: 2cbcf01d0cd61616022a228a97271ae43b642c0148e3cf4f643f647aef9f7aa7
+population:
+  sample_count: 11646
+  population_filter: model_eligible_rpm_v001 == True
+representation:
+  shape_per_sample:
+  - 64
+  - 59
+  sample_rate_hz: 16000
+  n_fft: 1024
+  win_length: 1024
+  hop_length: 256
+  n_mels: 64
+  fmin_hz: 20.0
+  fmax_hz: 8000.0
+upstream:
+  preprocessing: PREP-001
+  split: SPLIT-001
+  sample_manifest: SAMPLE-MANIFEST-001

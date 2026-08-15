@@ -1,0 +1,51 @@
+specification:
+  model_version: CNN-001
+  status: frozen_initial_spec
+  created_date: '2026-08-15'
+upstream:
+  preprocessing_version: PREP-001
+  split_version: SPLIT-001
+  sample_manifest_version: SAMPLE-MANIFEST-001
+  baseline_benchmark: BASE-002
+population:
+  filter: model_eligible_rpm_v001 == True
+  target: rpm_mean
+input_audio:
+  sample_rate_hz: 16000
+  window_duration_s: 1.0
+  channel_strategy: mono_average
+log_mel:
+  n_fft: 1024
+  win_length: 1024
+  hop_length: 256
+  n_mels: 64
+  fmin_hz: 20
+  fmax_hz: 8000
+  power: 2.0
+normalization:
+  spectrogram: training_statistics_only
+  target: training_mean_std_only
+architecture:
+  conv_channels:
+  - 16
+  - 32
+  - 64
+  kernel_size: 3
+  batch_normalization: true
+  pooling: 2x2_max_pool
+  global_pooling: adaptive_average
+  dense_units: 32
+  dropout: 0.2
+  output_units: 1
+training:
+  loss: MSE
+  optimizer: AdamW
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 64
+  maximum_epochs: 50
+  early_stopping_patience: 7
+  random_seed: 42
+selection_policy:
+  primary_metric: validation_mae_rpm
+  test_used_for_tuning: false
