@@ -1,0 +1,14 @@
+model_version: CNN-001
+best_checkpoint:
+  storage: Google Drive
+  logical_path: models/cnn/cnn001_rpm_best_v001.pt
+  epoch: 18
+  validation_mae_rpm: 60.18791198730469
+  sha256: fde7a5b4141aeb74e64bca80d0b9fe0dc3256e75dad565b4b70998d22c14b0c9
+validation_status: not_selected_by_primary_validation_mae
+test_evaluated: false
+latest_checkpoint:
+  storage: Google Drive
+  logical_path: models/cnn/cnn001_rpm_latest_v001.pt
+  epoch: 25
+  sha256: cf7df521b9ac885881a47ac2a6f5f9de7ef648c273894bed5091b37108014686
