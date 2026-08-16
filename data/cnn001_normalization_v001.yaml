@@ -1,0 +1,16 @@
+model_version: CNN-001
+fit_population: training_split_only
+recovery_source: cnn001_rpm_best_v001.pt checkpoint_epoch_17
+sample_counts:
+  train: 7958
+  validation: 1798
+  test: 1890
+log_mel:
+  mean: -55.55999170940531
+  std: 27.285103590934973
+rpm_target:
+  mean_rpm: 3010.7084271051563
+  std_rpm: 1741.9611595520996
+leakage_policy:
+  validation_statistics_used: false
+  test_statistics_used: false
