@@ -1,0 +1,13 @@
+model_version: CNN-002
+status: not_selected
+best_checkpoint:
+  storage: Google Drive
+  logical_path: models/cnn/cnn002_rpm_best_v001.pt
+  epoch: 7
+  validation_mae_rpm: 101.62303924560548
+  sha256: 0f327aa40a8d0c6d641bfe8e5894b5ed9ba3a8cc61b18921cdabe5682dd003a0
+comparison:
+  base002_validation_mae_rpm: 37.61796957067318
+  cnn001_validation_mae_rpm: 60.18791198730469
+  cnn002_validation_mae_rpm: 101.62303924560548
+test_evaluated: false
