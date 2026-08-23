@@ -1,0 +1,23 @@
+specification_version: TORQUE-SPEC-001
+target:
+  name: torque_mean_nm
+  units: Nm
+windowing:
+  preprocessing_version: PREP-001
+  window_duration_s: 1.0
+  rpm_steady_required: true
+torque_stability:
+  metric: torque_range_nm
+  rule: torque_range_nm <= max(20 Nm, 0.05 * abs(torque_mean_nm))
+  absolute_floor_nm: 20.0
+  relative_fraction: 0.05
+eligibility_column: model_eligible_torque_v001
+split_version: SPLIT-001
+primary_metric: validation_mae_nm
+secondary_metrics:
+- validation_rmse_nm
+- validation_r2
+- validation_p95_error_nm
+feature_source: FEAT-001
+test_policy: Validation selects the preferred torque baseline. Test is evaluated only
+  after model selection is frozen.

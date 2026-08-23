@@ -1,0 +1,20 @@
+decision_version: TORQUE-BASELINE-001
+target: torque_mean_nm
+population_specification: TORQUE-SPEC-001
+feature_source: FEAT-001
+primary_selection_metric: validation_mae_nm
+selected_model: TBASE-002
+selected_model_type: RandomForestRegressor
+validation_metrics:
+  mae_nm: 23.321647
+  rmse_nm: 41.574599
+  r2: 0.950266
+  p95_error_nm: 104.451214
+models:
+  TBASE-001:
+    logical_path: models/torque_baseline/tbase001_ridge_torque_v001.joblib
+    sha256: 6ac744cd72265dd358982ec32f8cc79324f61d3a4a4727239cf9880aea9f1dfa
+  TBASE-002:
+    logical_path: models/torque_baseline/tbase002_random_forest_torque_v001.joblib
+    sha256: aec795f0a7efde7ca784de94f2517a61f71ef3ad338264a083f732dd6aeb0574
+test_evaluated: false
