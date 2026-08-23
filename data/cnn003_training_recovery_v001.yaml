@@ -1,0 +1,19 @@
+model_version: CNN-003
+interruption:
+  last_completed_epoch_before_restart: 22
+  best_epoch_before_restart: 19
+  failure_type: Google Drive FUSE transport endpoint disconnected while reading HDF5
+    cache
+recovery:
+  resume_epoch: 23
+  completed_epochs_repeated: false
+  model_state_restored: true
+  optimizer_state_restored: true
+  early_stopping_state_restored: true
+  hdf5_runtime_strategy: frozen Drive cache mirrored to local Colab storage
+  exact_previous_dataloader_rng_state_restored: false
+  recovery_shuffle_seed: 65
+final_training:
+  best_epoch: 19
+  validation_mae_rpm: 62.7288818359375
+  validation_status: not_selected_for_test
