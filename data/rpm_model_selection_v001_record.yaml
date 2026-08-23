@@ -1,0 +1,16 @@
+decision_version: RPM-SELECTION-001
+target: rpm_mean
+primary_selection_metric: validation_mae_rpm
+selected_model: BASE-002
+selected_model_type: RandomForestRegressor
+selected_validation_mae_rpm: 37.61796957067318
+cnn_candidates_evaluated:
+- CNN-001
+- CNN-002
+- CNN-003
+cnn_test_policy:
+  cnn001_test_evaluated: false
+  cnn002_test_evaluated: false
+  cnn003_test_evaluated: false
+  reason: No CNN candidate beat BASE-002 on the frozen primary validation MAE metric.
+conclusion: BASE-002 remains the selected single-target RPM model.
