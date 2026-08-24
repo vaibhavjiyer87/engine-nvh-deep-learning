@@ -1,0 +1,58 @@
+specification:
+  model_version: MTL-001
+  status: frozen_pretraining_spec
+population:
+  source: TORQUE-SPEC-001
+  train_count: 7739
+  validation_count: 1749
+  test_count: 1815
+input:
+  representation: CNN-001 log-mel cache
+  shape:
+  - 64
+  - 59
+  input_normalization: cnn001_normalization_v001.yaml training-only statistics
+  runtime_strategy: Mirror HDF5 cache from Drive to local Colab storage before training
+targets:
+  rpm: rpm_mean
+  torque: torque_mean_nm
+  normalization_record: mtl001_target_normalization_v001.yaml
+architecture:
+  type: shared_frequency_aware_cnn
+  conv_channels:
+  - 16
+  - 32
+  - 64
+  pooling_sequence:
+  - - 1
+    - 2
+  - - 1
+    - 2
+  - - 2
+    - 2
+  adaptive_pool_output:
+  - 32
+  - 1
+  shared_dense_units: 64
+  dropout: 0.2
+  heads:
+  - rpm
+  - torque
+training:
+  rpm_loss: MSELoss_standardized
+  torque_loss: MSELoss_standardized
+  rpm_loss_weight: 0.5
+  torque_loss_weight: 0.5
+  optimizer: AdamW
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 64
+  maximum_epochs: 25
+  early_stopping_patience: 7
+  random_seed: 42
+selection:
+  primary_metric: validation_joint_normalized_mae
+  definition: 0.5*(rpm_MAE/train_rpm_std) + 0.5*(torque_MAE/train_torque_std)
+  test_approval_rule: MTL-001 must not be worse than the frozen shared-population
+    benchmark on either RPM MAE or torque MAE, and must improve at least one.
+test_used_for_tuning: false

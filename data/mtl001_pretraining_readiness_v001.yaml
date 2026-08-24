@@ -1,0 +1,18 @@
+model_version: MTL-001
+specification_frozen: true
+population_validated: true
+population_counts:
+  train: 7739
+  validation: 1749
+  test: 1815
+validation_benchmarks_frozen: true
+target_normalization_frozen: true
+dataset_module_validated: true
+model_module_validated: true
+forward_pass_validated: true
+parameter_count: 154786
+training_started: false
+epochs_completed: 0
+test_loader_created: false
+test_evaluated: false
+next_step: "Step 83 \u2014 MTL-001 training"

@@ -1,0 +1,12 @@
+model_version: MTL-001
+population_source: TORQUE-SPEC-001
+population_manifest: data/manifests/torque_population_v001.csv
+required_targets:
+- rpm_mean
+- torque_mean_nm
+sample_counts:
+  train: 7739
+  validation: 1749
+  test: 1815
+log_mel_cache: CNN-001/logmel_v001.h5
+test_used_for_model_selection: false

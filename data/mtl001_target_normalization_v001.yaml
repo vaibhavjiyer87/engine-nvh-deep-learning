@@ -1,0 +1,11 @@
+model_version: MTL-001
+fit_population: shared_training_split_only
+sample_count: 7739
+rpm:
+  mean: 3017.9458467552777
+  std: 1724.302991437211
+torque_nm:
+  mean: 105.23223696167003
+  std: 170.51079922080785
+validation_statistics_used: false
+test_statistics_used: false
