@@ -1,0 +1,2 @@
+experiment_id,test_mae_nm,test_rmse_nm,test_r2,test_p95_error_nm
+TBASE-002,20.743732259055864,41.356519022986774,0.94517761250318,92.55998470285184

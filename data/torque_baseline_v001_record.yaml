@@ -17,4 +17,12 @@ models:
   TBASE-002:
     logical_path: models/torque_baseline/tbase002_random_forest_torque_v001.joblib
     sha256: aec795f0a7efde7ca784de94f2517a61f71ef3ad338264a083f732dd6aeb0574
-test_evaluated: false
+test_evaluated: true
+test_metrics:
+  test_mae_nm: 20.743732259055864
+  test_rmse_nm: 41.356519022986774
+  test_r2: 0.94517761250318
+  test_p95_error_nm: 92.55998470285184
+test_artifacts:
+  metrics: results/tables/torque/tbase002_test_metrics_v001.csv
+  predictions: results/tables/torque/tbase002_test_predictions_v001.csv
