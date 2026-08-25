@@ -1,0 +1,12 @@
+model_version: MTL-001
+best_checkpoint:
+  logical_path: models/multitask/mtl001_best_v001.pt
+  epoch: 5
+  sha256: 187667f535ce95d69e8f55e2f429d21ead0b738dd3eaa81227f1d03554869352
+validation:
+  status: not_selected_for_test
+  rpm_mae: 113.43998718261719
+  torque_mae: 36.07069778442383
+  rpm_benchmark_mae: 38.38680992782194
+  torque_benchmark_mae: 23.321647019324573
+test_evaluated: false
