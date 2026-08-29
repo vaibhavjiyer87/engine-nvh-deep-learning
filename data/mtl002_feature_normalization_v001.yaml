@@ -1,0 +1,134 @@
+model_version: MTL-002
+fit_population: shared_training_split_only
+training_sample_count: 7739
+feature_source: FEAT-001
+feature_count: 41
+feature_order:
+- rms
+- peak_abs
+- crest_factor
+- zero_crossing_rate
+- spectral_centroid_hz
+- spectral_bandwidth_hz
+- spectral_rolloff_85_hz
+- spectral_flatness
+- dominant_frequency_hz
+- band_energy_0_250_hz
+- band_energy_250_500_hz
+- band_energy_500_1000_hz
+- band_energy_1000_2000_hz
+- band_energy_2000_4000_hz
+- band_energy_4000_8000_hz
+- mfcc_01_mean
+- mfcc_01_std
+- mfcc_02_mean
+- mfcc_02_std
+- mfcc_03_mean
+- mfcc_03_std
+- mfcc_04_mean
+- mfcc_04_std
+- mfcc_05_mean
+- mfcc_05_std
+- mfcc_06_mean
+- mfcc_06_std
+- mfcc_07_mean
+- mfcc_07_std
+- mfcc_08_mean
+- mfcc_08_std
+- mfcc_09_mean
+- mfcc_09_std
+- mfcc_10_mean
+- mfcc_10_std
+- mfcc_11_mean
+- mfcc_11_std
+- mfcc_12_mean
+- mfcc_12_std
+- mfcc_13_mean
+- mfcc_13_std
+mean:
+  rms: 0.11824392840785565
+  peak_abs: 0.27339973392718175
+  crest_factor: 2.346966835248412
+  zero_crossing_rate: 0.012632524899132594
+  spectral_centroid_hz: 93.11784604494116
+  spectral_bandwidth_hz: 39.36138803620419
+  spectral_rolloff_85_hz: 114.90153766636516
+  spectral_flatness: 0.007107284774208974
+  dominant_frequency_hz: 95.62204419175605
+  band_energy_0_250_hz: 0.9729332106503621
+  band_energy_250_500_hz: 0.019260188002756064
+  band_energy_500_1000_hz: 0.0006591096791346273
+  band_energy_1000_2000_hz: 3.894438328632394e-05
+  band_energy_2000_4000_hz: 1.612647289659269e-06
+  band_energy_4000_8000_hz: 7.328227752679653e-08
+  mfcc_01_mean: -455.1154826521981
+  mfcc_01_std: 55.65380024110521
+  mfcc_02_mean: 164.71465356166024
+  mfcc_02_std: 15.265014508956932
+  mfcc_03_mean: 75.56420603068335
+  mfcc_03_std: 12.774853502283849
+  mfcc_04_mean: 46.78573243780367
+  mfcc_04_std: 6.213242734995041
+  mfcc_05_mean: 40.5424013933881
+  mfcc_05_std: 5.3639444967644945
+  mfcc_06_mean: 31.450676367562906
+  mfcc_06_std: 3.8794749994844193
+  mfcc_07_mean: 22.378912469724273
+  mfcc_07_std: 2.7406112540675496
+  mfcc_08_mean: 14.397908034902786
+  mfcc_08_std: 2.252875709802486
+  mfcc_09_mean: 12.407204776788609
+  mfcc_09_std: 1.9247379878422506
+  mfcc_10_mean: 13.949154358572361
+  mfcc_10_std: 2.2002822635578605
+  mfcc_11_mean: 9.746916417473892
+  mfcc_11_std: 1.7455102785553391
+  mfcc_12_mean: 3.1834403897906047
+  mfcc_12_std: 1.1968400019063
+  mfcc_13_mean: -1.2177690452094465
+  mfcc_13_std: 1.607289742654817
+std:
+  rms: 0.04218230835192641
+  peak_abs: 0.09378530458318315
+  crest_factor: 0.48544910760233995
+  zero_crossing_rate: 0.007103541978998384
+  spectral_centroid_hz: 48.29253382660887
+  spectral_bandwidth_hz: 24.092470343914616
+  spectral_rolloff_85_hz: 73.05848999637647
+  spectral_flatness: 0.08400207077881956
+  dominant_frequency_hz: 58.74822426599489
+  band_energy_0_250_hz: 0.09683116669983925
+  band_energy_250_500_hz: 0.05073358047353631
+  band_energy_500_1000_hz: 0.0014300818351986235
+  band_energy_1000_2000_hz: 8.293605986052171e-05
+  band_energy_2000_4000_hz: 3.495910723337885e-06
+  band_energy_4000_8000_hz: 1.0155265802399624e-06
+  mfcc_01_mean: 86.95283996558727
+  mfcc_01_std: 19.016450434277093
+  mfcc_02_mean: 45.27760556208406
+  mfcc_02_std: 8.615061532787996
+  mfcc_03_mean: 19.949517435375387
+  mfcc_03_std: 6.53931174032758
+  mfcc_04_mean: 16.556877255573976
+  mfcc_04_std: 4.079419427154652
+  mfcc_05_mean: 9.749722904403127
+  mfcc_05_std: 3.20211805218625
+  mfcc_06_mean: 9.973035179281164
+  mfcc_06_std: 2.6426565667313477
+  mfcc_07_mean: 8.528442102306112
+  mfcc_07_std: 1.920393727133474
+  mfcc_08_mean: 9.560605572366368
+  mfcc_08_std: 1.3007113157582086
+  mfcc_09_mean: 7.508603182310932
+  mfcc_09_std: 1.0302082939359396
+  mfcc_10_mean: 4.241079493816248
+  mfcc_10_std: 0.8481082306929818
+  mfcc_11_mean: 4.273332035061088
+  mfcc_11_std: 0.6989818645136283
+  mfcc_12_mean: 5.054135234736633
+  mfcc_12_std: 0.5158341087880238
+  mfcc_13_mean: 5.095926299232663
+  mfcc_13_std: 0.6761345595050131
+zero_variance_features: []
+validation_statistics_used: false
+test_statistics_used: false

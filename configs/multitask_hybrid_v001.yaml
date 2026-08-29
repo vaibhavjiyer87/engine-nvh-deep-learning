@@ -1,0 +1,50 @@
+specification:
+  model_version: MTL-002
+  status: frozen_pretraining_spec
+experiment_hypothesis: Fuse learned log-mel CNN representations with the same 41 engineered
+  FEAT-001 NVH predictors used by the strong conventional RPM and torque baselines.
+population:
+  source: TORQUE-SPEC-001
+  train_count: 7739
+  validation_count: 1749
+  test_count: 1815
+inputs:
+  acoustic: CNN-001 log-mel representation
+  engineered: FEAT-001 41 predictors
+  engineered_feature_count: 41
+  engineered_normalization: training-only per-feature mean/std
+targets:
+  rpm: rpm_mean
+  torque: torque_mean_nm
+  normalization: MTL-001 training-only target normalization
+architecture:
+  type: hybrid_frequency_aware_multitask_cnn
+  acoustic_embedding_dim: 64
+  engineered_embedding_dim: 32
+  fusion_dim: 64
+  dropout: 0.2
+  heads:
+  - rpm
+  - torque
+training:
+  rpm_loss: MSELoss_standardized
+  torque_loss: MSELoss_standardized
+  rpm_loss_weight: 0.5
+  torque_loss_weight: 0.5
+  optimizer: AdamW
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 64
+  maximum_epochs: 25
+  early_stopping_patience: 7
+  random_seed: 42
+checkpoint_selection:
+  metric: validation_joint_normalized_mae
+test_approval_rule:
+  must_not_be_worse_than_benchmark_on_either_target: true
+  minimum_relative_mae_improvement_on_at_least_one_target: 0.02
+  description: MTL-002 must match or beat both frozen shared-population conventional
+    benchmark MAEs and improve at least one target by >=2%.
+test_used_for_tuning: false
+project_policy: MTL-002 is the final planned model-development experiment regardless
+  of outcome.
