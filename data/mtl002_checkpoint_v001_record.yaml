@@ -1,0 +1,14 @@
+model_version: MTL-002
+experiment_role: final_planned_model_experiment
+best_checkpoint:
+  logical_path: models/multitask/mtl002_best_v001.pt
+  epoch: 14
+  sha256: 2885e6216725b7fe895c29ce4ad2714a57e888b1ad93dc7c696fe83c7677aa2b
+validation:
+  status: not_selected_for_test
+  rpm_mae: 112.16144561767578
+  rpm_benchmark_mae: 38.38680992782194
+  torque_mae: 27.298778533935547
+  torque_benchmark_mae: 23.321647019324573
+test_evaluated: false
+further_model_development_planned: false
