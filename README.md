@@ -145,3 +145,127 @@ All windows from the same source recording remain in the same split
 to prevent data leakage.
 
 See `configs/split_v001.yaml` for the frozen specification.
+
+<!-- PORTFOLIO_CASE_STUDY_START -->
+
+# Engine Operating-State Prediction from Acoustic Signals
+
+## Engineering question
+
+Can engine RPM and torque be estimated directly from engine-noise
+recordings, and do learned deep representations improve upon
+traditional NVH feature engineering?
+
+## Dataset
+
+The project uses the Procedural Engine Sounds Dataset and initially
+focuses on the `A_full_set` subset.
+
+The source WAV files contain four channels:
+
+- left engine audio,
+- right engine audio,
+- scaled engine speed,
+- scaled engine torque.
+
+Raw audio is not stored in this repository.
+
+## Modeling pipeline
+
+The project follows a versioned engineering workflow:
+
+`PREP-001 → SPLIT-001 → SAMPLE-MANIFEST-001 → ORDER-001 → FEAT-001`
+
+Two acoustic representations were evaluated:
+
+1. **FEAT-001** — 41 engineered time, spectral, band-energy and
+   MFCC predictors.
+2. **Log-mel spectrograms** — used as input to CNN and multi-task
+   deep-learning models.
+
+All model selection was performed using validation data.
+
+Test data was evaluated only after a model had satisfied its frozen
+validation-selection rule.
+
+## Main results
+
+### RPM
+
+The selected conventional model was **BASE-002**, a Random Forest
+using FEAT-001.
+
+Validation MAE:
+
+**37.62 RPM**
+
+The controlled CNN experiments did not improve upon this metric.
+
+### Torque
+
+The selected torque model was **TBASE-002**, also a Random Forest
+using FEAT-001.
+
+Validation MAE:
+
+**23.32 Nm**
+
+### Final deep-learning experiment
+
+MTL-002 combined:
+
+- a frequency-aware log-mel CNN representation, and
+- the same 41 engineered FEAT-001 descriptors.
+
+On the shared validation population:
+
+| Target | Conventional benchmark | MTL-002 |
+|---|---:|---:|
+| RPM MAE | 38.39 RPM | 112.16 RPM |
+| Torque MAE | 23.32 Nm | 27.30 Nm |
+
+MTL-002 did not satisfy the frozen validation criterion and was not
+evaluated on the test split.
+
+## Main engineering conclusion
+
+For this synthetic dataset, sample population and one-second
+steady-state formulation, carefully engineered NVH acoustic
+features combined with Random Forest regression provided better
+predictive accuracy than the tested end-to-end and hybrid
+deep-learning architectures.
+
+This does **not** imply that CNNs are generally inferior for NVH.
+Instead, it demonstrates why strong conventional baselines,
+controlled experiments and strict validation/test separation are
+necessary before adding model complexity.
+
+## Model-development sequence
+
+FEAT-001 + Random Forest
+→ strong conventional benchmark
+→ CNN-001 conventional log-mel CNN
+→ CNN-002 loss-function experiment
+→ CNN-003 frequency-aware CNN
+→ MTL-001 shared RPM + torque CNN
+→ MTL-002 hybrid CNN + engineered features
+→ conventional engineered-feature models remain preferred
+
+## Final selected models
+
+- **RPM:** BASE-002 — Random Forest + FEAT-001
+- **Torque:** TBASE-002 — Random Forest + FEAT-001
+
+Further CNN tuning was intentionally stopped after the final planned
+MTL-002 experiment.
+
+## Reproducibility
+
+See:
+
+`docs/reproducibility_and_architecture.md`
+
+for the project lineage, storage strategy, experiment protocol and
+reproduction workflow.
+
+<!-- PORTFOLIO_CASE_STUDY_END -->

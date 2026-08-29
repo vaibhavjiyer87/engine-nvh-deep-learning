@@ -1,0 +1,10 @@
+experiment_id,representation,model_family,task,validation_population,test_evaluated,final_status,validation_rpm_mae,validation_torque_mae
+BASE-001,FEAT-001,Ridge regression,RPM,RPM steady-state,False,Rejected baseline,,
+BASE-002,FEAT-001,Random Forest,RPM,RPM steady-state,True,Selected RPM model,37.61796957067318,
+CNN-001,Log-mel,CNN,RPM,RPM steady-state,False,Rejected,60.18791198730469,
+CNN-002,Log-mel,CNN — loss experiment,RPM,RPM steady-state,False,Rejected,101.62303924560548,
+CNN-003,Frequency-aware log-mel,Frequency-aware CNN,RPM,RPM steady-state,False,Rejected,62.7288818359375,
+TBASE-001,FEAT-001,Ridge regression,Torque,TORQUE-SPEC-001,False,Rejected baseline,,76.61315551407242
+TBASE-002,FEAT-001,Random Forest,Torque,TORQUE-SPEC-001,True,Selected torque model,,23.321647019324573
+MTL-001,Log-mel,Multi-task CNN,RPM + Torque,Shared TORQUE-SPEC-001,False,Rejected,113.4399871826172,36.07069778442383
+MTL-002,Log-mel + FEAT-001,Hybrid multi-task CNN,RPM + Torque,Shared TORQUE-SPEC-001,False,Final DL experiment — rejected,112.16144561767578,27.298778533935547

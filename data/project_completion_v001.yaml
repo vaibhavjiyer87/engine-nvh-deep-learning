@@ -1,0 +1,17 @@
+project: Deep-Learning Prediction of Engine Operating State and Order Content from
+  Acoustic Signals
+status: complete
+model_development_status: closed
+selected_models:
+  rpm: BASE-002
+  torque: TBASE-002
+deep_learning_result: No tested CNN, multi-task CNN or hybrid CNN model surpassed
+  the frozen conventional benchmarks.
+final_deep_learning_experiment: MTL-002
+mtl002_validation_status: failed
+test_protocol:
+  selected_conventional_models_tested: true
+  rejected_deep_learning_models_tested: false
+further_model_tuning_planned: false
+portfolio_packaging_complete: true
+completion_record_created_utc: '2026-08-29T13:27:13.433052+00:00'

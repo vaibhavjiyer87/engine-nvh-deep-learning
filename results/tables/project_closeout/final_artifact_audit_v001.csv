@@ -1,0 +1,53 @@
+storage,artifact,required,exists
+GitHub repository,configs/preprocessing_v001.yaml,True,True
+GitHub repository,configs/split_v001.yaml,True,True
+GitHub repository,configs/order_analysis_v001.yaml,True,True
+GitHub repository,configs/features_v001.yaml,True,True
+GitHub repository,configs/cnn_rpm_v001.yaml,True,True
+GitHub repository,configs/cnn_rpm_v002.yaml,True,True
+GitHub repository,configs/cnn_rpm_v003.yaml,True,True
+GitHub repository,configs/torque_modeling_v001.yaml,True,True
+GitHub repository,configs/multitask_rpm_torque_v001.yaml,True,True
+GitHub repository,configs/multitask_hybrid_v001.yaml,True,True
+GitHub repository,src/data_loader.py,True,True
+GitHub repository,src/audio_features.py,True,True
+GitHub repository,src/spectrogram_features.py,True,True
+GitHub repository,src/cnn_dataset.py,True,True
+GitHub repository,src/cnn_models.py,True,True
+GitHub repository,src/cnn_models_v003.py,True,True
+GitHub repository,src/multitask_dataset.py,True,True
+GitHub repository,src/multitask_models.py,True,True
+GitHub repository,src/hybrid_multitask_dataset.py,True,True
+GitHub repository,src/hybrid_multitask_models.py,True,True
+GitHub repository,data/rpm_model_selection_v001_record.yaml,True,True
+GitHub repository,data/torque_baseline_v001_record.yaml,True,True
+GitHub repository,data/mtl001_checkpoint_v001_record.yaml,True,True
+GitHub repository,data/mtl002_checkpoint_v001_record.yaml,True,True
+GitHub repository,reports/rpm_model_selection_final_v001.md,True,True
+GitHub repository,reports/torque_baseline_final_v001.md,True,True
+GitHub repository,reports/mtl001_validation_decision_v001.md,True,True
+GitHub repository,reports/mtl002_validation_decision_v001.md,True,True
+GitHub repository,reports/final_modeling_conclusion_v001.md,True,True
+GitHub repository,reports/preprocessing_decision_v001.md,False,False
+GitHub repository,reports/split_decision_v001.md,False,True
+GitHub repository,reports/order_analysis_decision_v001.md,False,True
+GitHub repository,reports/baseline_model_decision_v001.md,False,True
+GitHub repository,reports/cnn001_validation_review_v001.md,False,True
+GitHub repository,reports/cnn001_validation_decision_v001.md,False,True
+GitHub repository,reports/cnn002_validation_decision_v001.md,False,True
+GitHub repository,reports/cnn003_validation_decision_v001.md,False,True
+GitHub repository,data/baseline_features_v001_record.yaml,False,True
+GitHub repository,data/cnn001_logmel_cache_v001_record.yaml,False,True
+GitHub repository,data/cnn001_normalization_v001.yaml,False,True
+GitHub repository,data/mtl001_population_v001_record.yaml,False,True
+GitHub repository,data/mtl001_target_normalization_v001.yaml,False,True
+GitHub repository,data/mtl002_feature_normalization_v001.yaml,False,True
+Persistent external storage,raw_manifest,True,True
+Persistent external storage,sample_manifest,True,True
+Persistent external storage,torque_population,True,True
+Persistent external storage,feat001_cache,True,True
+Persistent external storage,logmel_cache,True,True
+Persistent external storage,rpm_selected_model,True,True
+Persistent external storage,torque_selected_model,True,True
+Persistent external storage,mtl001_best,True,True
+Persistent external storage,mtl002_best,True,True
